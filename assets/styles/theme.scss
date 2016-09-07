@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+}
+
+.col-xs-4 {
+  background-color: $light-grey;
+  border: .1px solid $white;
+  height: 140px;
+  width: 33%;
+  box-sizing: border-box;
+}
+
+.game-board {
+  margin: 3em auto;
+  width: 30%;
+  box-sizing: border-box;
+}
+
+.score-board {
+  display: inline-block;
+}
+
+.score-board-group {
+  display: inline;
+  text-align: center;
+}
+
+.score-board h2 {
+  display: inline;
+  padding: 1em;
+}
+
+footer {
+  float: right;
+}
