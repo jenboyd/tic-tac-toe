@@ -51,15 +51,16 @@
                     name="credentials[password]" placeholder="password">
                   </div>
                 </div>
-              </form>
+
               <!-- //End Body of Model -->
 
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">
-                  Close
-                </button>
-                <button type="submit" class="btn btn-primary">Submit</button>
-              </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">
+                    Close
+                  </button>
+                  <button type="submit" class="btn btn-primary submit-button"> Submit</button>
+                </div>
+              </form>
             </div>
           </div>
         </div>
@@ -94,15 +95,15 @@
                      placeholder="password">
                   </div>
                 </div>
-              </form>
-              <!-- //End Body of Model -->
 
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">
-                  Close
-                </button>
-                <button type="submit" class="btn btn-primary">Submit</button>
-              </div>
+              <!-- //End Body of Model -->
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">
+                    Close
+                  </button>
+                  <button type="submit" class="btn btn-primary submit-button">Submit</button>
+                </div>
+              </form>
             </div>
           </div>
         </div>
@@ -113,19 +114,19 @@
       </header>
       <section class="game-board">
         <div class="row">
-          <div class="col-xs-4" id="tile0">0</div>
-          <div class="col-xs-4" id="tile1">1</div>
-          <div class="col-xs-4" id="tile2">2</div>
+          <div class="col-xs-4 tile" id="tile0">0</div>
+          <div class="col-xs-4 tile" id="tile1">1</div>
+          <div class="col-xs-4 tile" id="tile2">2</div>
         </div>
         <div class="row">
-          <div class="col-xs-4" id="tile3">3</div>
-          <div class="col-xs-4" id="tile4">4</div>
-          <div class="col-xs-4" id="tile5">5</div>
+          <div class="col-xs-4 tile" id="tile3">3</div>
+          <div class="col-xs-4 tile" id="tile4">4</div>
+          <div class="col-xs-4 tile" id="tile5">5</div>
         </div>
         <div class="row">
-          <div class="col-xs-4" id="tile6">6</div>
-          <div class="col-xs-4" id="tile7">7</div>
-          <div class="col-xs-4" id="tile8">8</div>
+          <div class="col-xs-4 tile" id="tile6">6</div>
+          <div class="col-xs-4 tile" id="tile7">7</div>
+          <div class="col-xs-4 tile" id="tile8">8</div>
         </div>
       </section>
       <div class="score-board">
@@ -140,8 +141,8 @@
       </div>
 
       <footer>
-        <button type="button" name="my-history">My Games</button>
-        <button type="button" name="sign-out">Sign Out</button>
+        <button type="button" id="my-games">My Games</button>
+        <button type="button" id="sign-out">Sign Out</button>
       </footer>
     </body>
   </html>

@@ -1,14 +1,21 @@
 'use strict';
 
+const app = require ('../app');
 const api = require('./api');
 const ui = require('./ui');
 
-const getFormFields = require ('../../../lib/get-form-fields');
+// let gameBoard = document.getElementById('game-board');
+let data = app.host;
 
-$(() => {
-  $('#new-game').on('submit', onNewGame); //Create function to reset the gameboard.
-  $('#sign-out').on('submit', onSignOut); //Create function to sign the user out.
+const onTileSelection = function () {
+  console.log("tile clicked");
+  $(this).toggleClass("active-tile");
+};
 
-  $('#').on('submit', onSignOut); //Create function add "x" or "o" to game-board array and show indicator on board .
+const addHandlers = () => {
+  $(".col-xs-4").on('click', onTileSelection);
+};
 
-});
+module.exports = {
+  addHandlers,
+};
