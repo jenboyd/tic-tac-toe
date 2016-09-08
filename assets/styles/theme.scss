@@ -10,24 +10,31 @@ h1 {
 .tile {
   background-color: $light-grey;
   border: .1px solid $white;
+  box-sizing: border-box;
   height: 140px;
   width: 33%;
-  box-sizing: border-box;
 }
 
-.active-tile {
+.active-tile-x {
   background-color: blue;
   border: .1px solid $white;
+  box-sizing: border-box;
   height: 140px;
   width: 33%;
-  box-sizing: border-box;
 }
 
+.active-tile-y {
+  background-color: green;
+  border: .1px solid $white;
+  box-sizing: border-box;
+  height: 140px;
+  width: 33%;
+}
 
 .game-board {
+  box-sizing: border-box;
   margin: 3em auto;
   width: 30%;
-  box-sizing: border-box;
 }
 
 .score-board {
