@@ -22,6 +22,8 @@ const onSignIn = function (event) {
 
 const onSignOut = function () {
   event.preventDefault();
+  $('header').show();
+  $('.container').hide();
   api.signOut()
     .done (ui.signOutSuccess)
     .fail (ui.failure);

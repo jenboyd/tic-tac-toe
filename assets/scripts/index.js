@@ -7,4 +7,5 @@ const gameEvents = require('./gamelogic/events.js');
 $(() => {
   authEvents.addHandlers();
   gameEvents.addHandlers();
+
 });

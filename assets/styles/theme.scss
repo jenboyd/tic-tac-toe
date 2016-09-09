@@ -5,6 +5,45 @@
 
 h1 {
   text-align: center;
+  margin-top: 1em;
+}
+
+header h1 {
+  font-size: 4em;
+  margin-top: 2em;
+}
+
+header {
+  text-align: center;
+}
+
+.header-button {
+  display: block;
+  font-size: 2em;
+  background-color: $white;
+  margin: 1.5em auto;
+  border: 0;
+  color: $dark-grey;
+}
+
+.header-button:hover {
+  color: $button-hover;
+}
+
+.button {
+  background-color: $white;
+  border: 0;
+  color: $dark-grey;
+  margin: 3em 1em;
+}
+
+.button:hover {
+  color: $button-hover;
+}
+
+.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
 .tile {
@@ -31,24 +70,33 @@ h1 {
   width: 150px;
 }
 
+.row {
+  margin: 0 auto;
+}
+
 .game-board {
   box-sizing: border-box;
   margin: 3em auto;
   width: 450px;
+  background-color: blue;
 }
 
 .score-board {
-  display: inline-block;
+  width: 300px;
 }
 
-.score-board-group {
+.col-xs-6 {
   display: inline;
   text-align: center;
 }
 
-.score-board h2 {
+.indicator {
+  color: $light-grey;
+}
+
+.text {
   display: inline;
-  padding: 1em;
+  padding: 0 10px;
 }
 
 .xWin {
@@ -102,5 +150,8 @@ h3 {
 
 footer {
   float: right;
+}
 
+.container {
+  display: none;
 }

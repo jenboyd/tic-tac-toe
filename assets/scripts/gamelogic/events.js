@@ -19,6 +19,8 @@ const onNewGame = function (event) {
     $(".game-board>.row>div").removeClass("active-tile-x active-tile-y");
     $('.overlay').hide();
     $('.tie').hide();
+    $('header').hide();
+    $('.container').show();
     api.createGame(event)
       .done (ui.createGameSuccess)
       .fail (ui.failure);
@@ -26,8 +28,8 @@ const onNewGame = function (event) {
 
 const onGetGame = function (event) {
     event.preventDefault();
-    let gameID = getFormFields(event.target);
-    api.getGame(gameID)
+    let data = getFormFields(event.target);
+    api.getGame(data)
       .done (ui.getGameSuccess)
       .fail (ui.failure);
 };
@@ -127,6 +129,8 @@ const takeTurn = function () {
               celebrateYWin();
             }
           }
+
+          console.log ('stop');
           checkTie ();
           nextPlayer ();
         }
