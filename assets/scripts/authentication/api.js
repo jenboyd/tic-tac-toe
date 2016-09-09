@@ -32,9 +32,50 @@ const signOut = () => {
   });
 };
 
+const createGame = function() {
+  return $.ajax({
+    url: 'http://tic-tac-toe.wdibos.com/games',
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
+    method: 'POST',
+  });
+};
+
+const getGame = function(data) {
+  return $.ajax({
+    url: 'http://tic-tac-toe.wdibos.com/games/' + data.games.id,
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
+    method: 'GET',
+  });
+};
+
+const updateGame = function (index, value) {
+  return $.ajax({
+      method: 'PATCH',
+      url: 'http://tic-tac-toe.wdibos.com/games/' + app.game.id,
+      headers: {
+      Authorization: 'Token token=' + app.user.token,
+      },
+      data: {
+           "game": {
+              "cell": {
+               "index": index,
+               "value": value,
+                      },
+                    }
+      }
+    });
+  };
+
 
 module.exports = {
   signUp,
   signIn,
   signOut,
+  createGame,
+  getGame,
+  updateGame,
 };

@@ -11,30 +11,30 @@ h1 {
   background-color: $light-grey;
   border: .1px solid $white;
   box-sizing: border-box;
-  height: 140px;
-  width: 33%;
+  height: 150px;
+  width: 150px;
 }
 
 .active-tile-x {
-  background-color: blue;
+  background-color: $player-x;
   border: .1px solid $white;
   box-sizing: border-box;
-  height: 140px;
-  width: 33%;
+  height: 150px;
+  width: 150px;
 }
 
 .active-tile-y {
-  background-color: green;
+  background-color: $player-y;
   border: .1px solid $white;
   box-sizing: border-box;
-  height: 140px;
-  width: 33%;
+  height: 150px;
+  width: 150px;
 }
 
 .game-board {
   box-sizing: border-box;
   margin: 3em auto;
-  width: 30%;
+  width: 450px;
 }
 
 .score-board {
@@ -51,6 +51,56 @@ h1 {
   padding: 1em;
 }
 
+.xWin {
+  background: $player-x;
+  display: none;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.yWin {
+  background: $player-y;
+  display: none;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+h3 {
+  color: rgba(255, 255, 255, .4);
+  font-size: 14em;
+  text-align: center;
+  margin-top: 1.2em;
+  text-transform: uppercase;
+}
+
+.tie {
+  background-color: rgba(255, 255, 255, .75);
+  display: none;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  text-align: center;
+  text-transform: uppercase;
+  color: $medium-grey;
+  font-size: 2em;
+}
+
+.tie p {
+  margin-top: 300px;
+}
+
 footer {
   float: right;
+
 }
