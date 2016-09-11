@@ -15,11 +15,8 @@ const getGameSuccess = (data) => {
   $('#games-played').text(totalGames);
 };
 
-const failure = (error) => {
-};
 
 module.exports = {
   createGameSuccess,
   getGameSuccess,
-  failure,
 };
