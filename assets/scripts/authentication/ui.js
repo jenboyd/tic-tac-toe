@@ -16,6 +16,7 @@ const signInSuccess = (data) => {
 
 const signOutSuccess = () => {
   app.user = null;
+  $('#newGame').hide();
 };
 
 const changePasswordSuccess = () => {
@@ -23,7 +24,6 @@ const changePasswordSuccess = () => {
 };
 
 const failure = (error) => {
-  console.error(error);
 };
 
 

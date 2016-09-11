@@ -2,7 +2,10 @@
 
 $font-size: 16px;
 
+
 body {
+  font-weight: 100;
+  font-family: 'Allegra Sans', sans-serif;
   font-size: $font-size;
   color: $dark-grey;
 }
@@ -12,10 +15,6 @@ header h1 {
   font-family: 'Oswald', sans-serif;
 }
 
-.text
-.indicator {
-  font-family: 'Oswald', sans-serif;
-}
 
 .modal-header {
   text-align: left;
@@ -24,10 +23,11 @@ header h1 {
 h1 {
   text-align: center;
   margin-top: 1em;
+  font-size: 3em;
 }
 
 header h1 {
-  font-size: 4em;
+  font-size: 4.5em;
 }
 
 h3 {
@@ -49,11 +49,13 @@ header {
 
 .indicator {
   color: $light-grey;
+  font-family: 'Oswald', sans-serif;
 }
 
 .text {
   display: inline;
   padding: 0 10px;
+  font-family: 'Oswald', sans-serif;
 }
 
 .games-popup {

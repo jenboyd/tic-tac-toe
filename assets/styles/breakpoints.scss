@@ -7,6 +7,12 @@
   }
 }
 
+.button {
+  @include breakpoint(tiny) {
+    margin: .5em auto;
+  }
+}
+
 .modal-content {
   @include breakpoint(tiny) {
     width: 100%;
@@ -39,10 +45,12 @@ h3 {
     font-size: 5.5em;
     margin-top: 3em;
   }
+
   @include breakpoint(medium) {
     font-size: 10em;
     margin-top: 1.8em;
   }
+  
   @include breakpoint(large) {
     font-size: 14em;
     margin-top: 1.2em;
@@ -52,6 +60,10 @@ h3 {
 footer {
   @include breakpoint(tiny) {
     text-align: center;
+    width: 200px;
+    margin: 0 auto;
+    font-size:1.5em;
+    padding: 0;
   }
 }
 
