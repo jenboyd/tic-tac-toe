@@ -1,6 +1,5 @@
 'use strict';
 
-// const getFormFields = require('../../../lib/get-form-fields');
 const api = require('../authentication/api');
 const ui = require('./ui');
 
