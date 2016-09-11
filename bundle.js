@@ -271,9 +271,10 @@ webpackJsonp([0],[
 /***/ function(module, exports) {
 
 	'use strict';
+	//updated server
 
 	var app = {
-	  host: 'http://tic-tac-toe.wdibos.com/'
+	  host: 'https://aqueous-atoll-85096.herokuapp.com/'
 	};
 
 	module.exports = app;
@@ -323,8 +324,6 @@ webpackJsonp([0],[
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function($) {'use strict';
-
-	// const getFormFields = require('../../../lib/get-form-fields');
 
 	var api = __webpack_require__(5);
 	var ui = __webpack_require__(9);
