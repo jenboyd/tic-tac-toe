@@ -1,0 +1,74 @@
+@import 'breakpoint';
+
+.game-board {
+  @include breakpoint(tiny) {
+    height: 360px;
+    width: 360px;
+  }
+}
+
+.button {
+  @include breakpoint(tiny) {
+    margin: .5em auto;
+  }
+}
+
+.modal-content {
+  @include breakpoint(tiny) {
+    width: 100%;
+  }
+}
+
+.tile {
+  @include breakpoint(tiny) {
+    height: 120px;
+    width: 120px;
+  }
+}
+
+.active-tile-x {
+  @include breakpoint(tiny) {
+    height: 120px;
+    width: 120px;
+  }
+}
+
+.active-tile-y {
+  @include breakpoint(tiny) {
+    height: 120px;
+    width: 120px;
+  }
+}
+
+h3 {
+  @include breakpoint(tiny) {
+    font-size: 5.5em;
+    margin-top: 3em;
+  }
+
+  @include breakpoint(medium) {
+    font-size: 10em;
+    margin-top: 1.8em;
+  }
+  
+  @include breakpoint(large) {
+    font-size: 14em;
+    margin-top: 1.2em;
+  }
+}
+
+footer {
+  @include breakpoint(tiny) {
+    text-align: center;
+    width: 200px;
+    margin: 0 auto;
+    font-size:1.5em;
+    padding: 0;
+  }
+}
+
+.games-popup {
+  @include breakpoint(tiny) {
+    text-align: center;
+  }
+}

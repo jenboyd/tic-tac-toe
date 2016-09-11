@@ -1,0 +1,68 @@
+
+
+$font-size: 16px;
+
+
+body {
+  font-weight: 100;
+  font-family: 'Allegra Sans', sans-serif;
+  font-size: $font-size;
+  color: $dark-grey;
+}
+
+h1,
+header h1 {
+  font-family: 'Oswald', sans-serif;
+}
+
+
+.modal-header {
+  text-align: left;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 1em;
+  font-size: 3em;
+}
+
+header h1 {
+  font-size: 4.5em;
+}
+
+h3 {
+  color: $win;
+  font-size: 14em;
+  text-align: center;
+  margin-top: 1.2em;
+  text-transform: uppercase;
+}
+
+header {
+  text-align: center;
+}
+
+
+.col-form-label {
+  text-align: left;
+}
+
+.indicator {
+  color: $light-grey;
+  font-family: 'Oswald', sans-serif;
+}
+
+.text {
+  display: inline;
+  padding: 0 10px;
+  font-family: 'Oswald', sans-serif;
+}
+
+.games-popup {
+  text-align: right;
+  color: $dark-grey;
+}
+
+footer {
+  text-align: right;
+}
