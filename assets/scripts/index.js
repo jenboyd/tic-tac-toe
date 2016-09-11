@@ -1,11 +1,7 @@
 'use strict';
 
-const authEvents = require('./authentication/events.js');
-const gameEvents = require('./gamelogic/events.js');
+// user require with a reference to bundle the file and use it in this file
+// var example = require('./example');
 
-// On document ready
-$(() => {
-  authEvents.addHandlers();
-  gameEvents.addHandlers();
-
-});
+// use require without a reference to ensure a file is bundled
+require('./example');
