@@ -29,10 +29,19 @@ const onSignOut = function () {
     .fail (ui.failure);
 };
 
+const onChangePassword = function (event) {
+  event.preventDefault();
+  let data = getFormFields(event.target);
+  api.changePassword(data)
+    .done (ui.changePasswordSuccess)
+    .fail (ui.failure);
+};
+
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp);
   $('#sign-in').on('submit', onSignIn);
   $('#sign-out').on('click', onSignOut);
+  $('#change-pwd').on('submit', onChangePassword);
 };
 
 module.exports = {

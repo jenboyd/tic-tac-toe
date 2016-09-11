@@ -1,6 +1,6 @@
 'use strict';
 
-const getFormFields = require('../../../lib/get-form-fields');
+// const getFormFields = require('../../../lib/get-form-fields');
 const api = require('../authentication/api');
 const ui = require('./ui');
 
@@ -17,8 +17,6 @@ const onNewGame = function (event) {
     gameBoard = ['','','','','','','','',''];
     gameOver = false;
     $(".game-board>.row>div").removeClass("active-tile-x active-tile-y");
-    $('.overlay').hide();
-    $('.tie').hide();
     $('header').hide();
     $('.container').show();
     api.createGame(event)
@@ -26,19 +24,6 @@ const onNewGame = function (event) {
       .fail (ui.failure);
 };
 
-const onGetGame = function (event) {
-    event.preventDefault();
-    let data = getFormFields(event.target);
-    api.getGame(data)
-      .done (ui.getGameSuccess)
-      .fail (ui.failure);
-};
-
-const onUpdateGame = function (index, value) {
-    api.updateGame(index, value)
-      .done (ui.updateGameSuccess)
-      .fail (ui.failure);
-};
 
 const nextPlayer = function () {
     if (player === 'x') {
@@ -60,7 +45,9 @@ const checkXWin = function () {
       ((gameBoard[0] === 'x') && (gameBoard[4] === 'x') && (gameBoard[8] === 'x')) ||
       ((gameBoard[6] === 'x') && (gameBoard[4] === 'x') && (gameBoard[2] === 'x'))){
 
+        gameOver = true;
         return true;
+
   } else {
         return false;
   }
@@ -78,6 +65,8 @@ const checkYWin = function () {
       ((gameBoard[0] === 'y') && (gameBoard[4] === 'y') && (gameBoard[8] === 'y')) ||
       ((gameBoard[6] === 'y') && (gameBoard[4] === 'y') && (gameBoard[2] === 'y'))){
 
+
+      gameOver = true;
       return true;
   } else {
      return false;
@@ -85,21 +74,50 @@ const checkYWin = function () {
 };
 
 const checkTie = function () {
-  console.log(turnCount);
   if ((turnCount > 8) && (!(checkXWin())) && (!(checkYWin()))){
     gameOver = true;
     $('.tie').show();
-    console.log("tie");
+    setTimeout(function() {
+         $('.tie').fadeOut();
+     }, 800);
+     onNewGame();
   }
 };
 
 const celebrateXWin = function () {
       $('.xWin').show();
+      setTimeout(function() {
+           $('.xWin').fadeOut();
+       }, 800);
+      onNewGame();
 };
 
 const celebrateYWin = function () {
       $('.yWin').show();
+      setTimeout(function() {
+           $('.yWin').fadeOut();
+       }, 800);
+       onNewGame();
 };
+
+
+const onGetGame = function (event) {
+    api.getGame(event)
+      .done (ui.getGameSuccess)
+      .fail (ui.failure);
+};
+
+const onUpdateGame = function (index, value) {
+  if ((checkXWin()) || (checkYWin())) {
+    api.updateGameEnd(index, value)
+      .done ()
+      .fail (ui.failure);
+  } else {
+    api.updateGame(index, value)
+      .done ()
+      .fail (ui.failure);
+    }
+  };
 
 const takeTurn = function () {
   if (gameOver === false) {
@@ -129,8 +147,6 @@ const takeTurn = function () {
               celebrateYWin();
             }
           }
-
-          console.log ('stop');
           checkTie ();
           nextPlayer ();
         }
@@ -139,10 +155,8 @@ const takeTurn = function () {
 
 const addHandlers = () => {
   $("#newGame").on('click', onNewGame);
-  $("#my-games").on('submit', onGetGame);
+  $("#get-games").on('click', onGetGame);
   $(".tile").on('click', takeTurn);
-  $('.overlay').on('click', onNewGame);
-  $('.tie').on('click', onNewGame);
 };
 
 module.exports = {

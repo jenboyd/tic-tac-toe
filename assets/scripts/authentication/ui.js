@@ -4,19 +4,22 @@ const app = require ('../app');
 
 const signUpSuccess = (data) => {
   app.user = data.user;
-  console.log("Successfully signed up");
   $('#signUpModal').modal('hide');
 };
 
 const signInSuccess = (data) => {
   app.user = data.user;
-  console.log("Successfully signed in");
   $('#signInModal').modal('hide');
+  $('.disabled').hide();
+  $('#newGame').show();
 };
 
 const signOutSuccess = () => {
   app.user = null;
-  console.log("Successfully signed out");
+};
+
+const changePasswordSuccess = () => {
+  $('#changePwdModal').modal('hide');
 };
 
 const failure = (error) => {
@@ -28,5 +31,6 @@ module.exports = {
   signUpSuccess,
   signInSuccess,
   signOutSuccess,
+  changePasswordSuccess,
   failure,
 };

@@ -8,9 +8,59 @@ body {
 }
 
 h1,
-header h1
+header h1 {
+  font-family: 'Oswald', sans-serif;
+}
+
 .text
 .indicator {
   font-family: 'Oswald', sans-serif;
-  
+}
+
+.modal-header {
+  text-align: left;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 1em;
+}
+
+header h1 {
+  font-size: 4em;
+}
+
+h3 {
+  color: $win;
+  font-size: 14em;
+  text-align: center;
+  margin-top: 1.2em;
+  text-transform: uppercase;
+}
+
+header {
+  text-align: center;
+}
+
+
+.col-form-label {
+  text-align: left;
+}
+
+.indicator {
+  color: $light-grey;
+}
+
+.text {
+  display: inline;
+  padding: 0 10px;
+}
+
+.games-popup {
+  text-align: right;
+  color: $dark-grey;
+}
+
+footer {
+  text-align: right;
 }

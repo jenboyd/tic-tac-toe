@@ -3,25 +3,24 @@
   padding: 0;
 }
 
+.container {
+  display: none;
+  width: 95%;
+}
+
 h1 {
-  text-align: center;
   margin-top: 1em;
 }
 
 header h1 {
-  font-size: 4em;
   margin-top: 2em;
-}
-
-header {
-  text-align: center;
 }
 
 .header-button {
   display: block;
   font-size: 2em;
   background-color: $white;
-  margin: 1.5em auto;
+  margin: 1.8em auto;
   border: 0;
   color: $dark-grey;
 }
@@ -30,20 +29,47 @@ header {
   color: $button-hover;
 }
 
+.header-button-hidden {
+  display: none;
+  font-size: 2em;
+  background-color: $white;
+  margin: 1.8em auto;
+  border: 0;
+  color: $dark-grey;
+}
+
+.header-button-hidden:hover {
+  color: $button-hover;
+}
+
 .button {
   background-color: $white;
   border: 0;
   color: $dark-grey;
-  margin: 3em 1em;
+  margin: 1em;
+  text-align: center;
 }
 
 .button:hover {
   color: $button-hover;
 }
 
-.disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
+.after-sign-in {
+  display: none;
+}
+
+.submit-button {
+  background-color: $dark-grey;
+  border-radius: 0px;
+  border: 0;
+}
+
+.submit-button:hover {
+  background-color: $medium-grey;
+}
+
+.btn-default {
+  border-radius: 0px;
 }
 
 .tile {
@@ -70,8 +96,20 @@ header {
   width: 150px;
 }
 
-.row {
-  margin: 0 auto;
+.board-row {
+  margin: 0px auto;
+}
+
+.score-row {
+  margin: 0px auto;
+}
+
+.modal-row {
+  margin: 15px auto;
+}
+
+.modal-content {
+  width: 600px;
 }
 
 .game-board {
@@ -83,20 +121,12 @@ header {
 
 .score-board {
   width: 300px;
+  margin-bottom: 2em;
 }
 
 .col-xs-6 {
   display: inline;
   text-align: center;
-}
-
-.indicator {
-  color: $light-grey;
-}
-
-.text {
-  display: inline;
-  padding: 0 10px;
 }
 
 .xWin {
@@ -121,13 +151,6 @@ header {
   z-index: 100;
 }
 
-h3 {
-  color: rgba(255, 255, 255, .4);
-  font-size: 14em;
-  text-align: center;
-  margin-top: 1.2em;
-  text-transform: uppercase;
-}
 
 .tie {
   background-color: rgba(255, 255, 255, .75);
@@ -148,10 +171,6 @@ h3 {
   margin-top: 300px;
 }
 
-footer {
-  float: right;
-}
-
-.container {
+.games-popup {
   display: none;
 }

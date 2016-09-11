@@ -25,29 +25,29 @@
 
               <!-- //Body of Model -->
               <form id="sign-up" class="modal-body">
-                <div class="form-group row">
-                  <label class="col-sm-2 col-form-label">
+                <div class="form-group row modal-row">
+                  <label class="col-sm-4 col-form-label">
                     Email
                   </label>
-                    <div class="col-sm-10">
+                    <div class="col-sm-8">
                       <input type="email" class="form-control"
                       name="credentials[email]" placeholder="email">
                     </div>
                 </div>
-                <div class="form-group row">
-                  <label class="col-sm-2 col-form-label">
+                <div class="form-group row modal-row">
+                  <label class="col-sm-4 col-form-label">
                     Password
                   </label>
-                  <div class="col-sm-10">
+                  <div class="col-sm-8">
                     <input type="password" class="form-control"
                     name="credentials[password]" placeholder="password">
                   </div>
                 </div>
-                <div class="form-group row">
-                  <label class="col-sm-2 col-form-label">
+                <div class="form-group row modal-row">
+                  <label class="col-sm-4 col-form-label">
                     Confirm Password
                   </label>
-                  <div class="col-sm-10">
+                  <div class="col-sm-8">
                     <input type="password" class="form-control"
                     name="credentials[password]" placeholder="password">
                   </div>
@@ -82,14 +82,14 @@
 
         <!-- //Body of Model -->
               <form id="sign-in" class="modal-body">
-                <div class="form-group row">
+                <div class="form-group row modal-row">
                   <label class="col-sm-2 col-form-label">Email</label>
                     <div class="col-sm-10">
                       <input type="email" class="form-control" name="credentials[email]"
                        placeholder="email">
                     </div>
                 </div>
-                <div class="form-group row">
+                <div class="form-group row modal-row">
                   <label class="col-sm-2 col-form-label">Password</label>
                   <div class="col-sm-10">
                     <input type="password" class="form-control" name="credentials[password]"
@@ -108,77 +108,89 @@
             </div>
           </div>
         </div>
-      <button type="button" class="header-button" id="newGame">New Game</button>
+        <button type="button" class="header-button-hidden" id="newGame">New Game</button>
       </header>
       <div class="container">
-      <h1>Tic Tac Toe</h1>
-      <section class="game-board">
-        <div class="row">
-          <div class="col-xs-4 tile" id="0"></div>
-          <div class="col-xs-4 tile" id="1"></div>
-          <div class="col-xs-4 tile" id="2"></div>
+        <h1>Tic Tac Toe</h1>
+        <section class="game-board">
+          <div class="row board-row ">
+            <div class="col-xs-4 tile" id="0"></div>
+            <div class="col-xs-4 tile" id="1"></div>
+            <div class="col-xs-4 tile" id="2"></div>
+          </div>
+          <div class="row board-row ">
+            <div class="col-xs-4 tile" id="3"></div>
+            <div class="col-xs-4 tile" id="4"></div>
+            <div class="col-xs-4 tile" id="5"></div>
+          </div>
+          <div class="row board-row ">
+            <div class="col-xs-4 tile" id="6"></div>
+            <div class="col-xs-4 tile" id="7"></div>
+            <div class="col-xs-4 tile" id="8"></div>
+          </div>
+        </section>
+        <div class="row score-board score-row">
+          <div class="col-xs-6">
+            <h2 class="indicator text">X</h2>
+            <h2 class= "score text" id="score-x">0</h2>
+          </div>
+          <div class="col-xs-6">
+            <h2 class="indicator text">O</h2>
+            <h2 class = "score text" id="score-y">0</h2>
+          </div>
         </div>
-        <div class="row">
-          <div class="col-xs-4 tile" id="3"></div>
-          <div class="col-xs-4 tile" id="4"></div>
-          <div class="col-xs-4 tile" id="5"></div>
-        </div>
-        <div class="row">
-          <div class="col-xs-4 tile" id="6"></div>
-          <div class="col-xs-4 tile" id="7"></div>
-          <div class="col-xs-4 tile" id="8"></div>
-        </div>
-      </section>
-      <div class="row score-board">
-        <div class="col-xs-6">
-          <h2 class="indicator text">X</h2>
-          <h2 class= "score text" id="score-x">0</h2>
-        </div>
-        <div class="col-xs-6">
-          <h2 class="indicator text">O</h2>
-          <h2 class = "score text" id="score-y">0</h2>
-        </div>
-      </div>
+        <footer>
+          <!-- Change Password -->
+          <button type="button" class="button" data-toggle="modal" data-target="#changePwdModal">
+            Change Password
+          </button>
 
-      <footer>
-      <!-- My Games -->
-      <button type="button" class="button" data-toggle="modal" data-target="#myGamesModal">
-        My Games
-      </button>
+          <!-- Modal -->
+          <div class="modal fade" id="changePwdModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
 
-      <!-- Modal -->
-      <div class="modal fade" id="myGamesModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h4 class="modal-title" id="my-games-modal">My Games</h4>
-            </div>
-
-            <!-- //Body of Model -->
-            <form id="my-games" class="modal-body">
-              <div class="form-group row">
-                <label class="col-sm-2 col-form-label">
-                  Email
-                </label>
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control" name="games[id]" placeholder="Game ID">
+                <!-- //Body of Model -->
+                <form id="change-pwd" class="modal-body">
+                  <div class="form-group row modal-row">
+                    <label class="col-sm-4 col-form-label">
+                      Old Password
+                    </label>
+                      <div class="col-sm-8">
+                        <input type="password" class="form-control"
+                        name="passwords[old]" placeholder="password">
+                      </div>
                   </div>
-                  <!-- //End Body of Model -->
+                  <div class="form-group row modal-row">
+                    <label class="col-sm-4 col-form-label">
+                      New Password
+                    </label>
+                    <div class="col-sm-8">
+                      <input type="password" class="form-control"
+                      name="passwords[new]" placeholder="password">
+                    </div>
+                  </div>
+
+                <!-- //End Body of Model -->
+
                   <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">
                       Close
                     </button>
-                    <button type="submit" class="btn btn-primary submit-button">Submit</button>
+                    <button type="submit" class="btn btn-primary submit-button"> Submit</button>
                   </div>
-                </div>
-              </form>
+                </form>
+              </div>
             </div>
           </div>
+          <button type="button" class="button" id="get-games">My Games</button>
+          <button type="button" class="button" id="sign-out">Sign Out</button>
+
+
+        </footer>
+        <div>
+          <h4 class="games-popup"> You have played <span id="games-played">0</span> games!</h4>
         </div>
-
-      <button type="button" class="button" id="sign-out">Sign Out</button>
-
-      </footer>
       </div>
 
       <div class="overlay yWin">
@@ -192,6 +204,5 @@
       <div class="tie">
         <p>Tie!<br>Click to Try Again</p>
       </div>
-
     </body>
   </html>

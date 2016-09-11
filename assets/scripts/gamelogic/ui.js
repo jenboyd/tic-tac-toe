@@ -4,16 +4,15 @@ const app = require ('../app');
 
 const createGameSuccess = (data) => {
   app.game = data.game;
-  console.log(data);
 };
 
 const getGameSuccess = (data) => {
-  console.log ("Game Data!");
-  console.log(data);
-};
-
-const updateGameSuccess = (data) => {
-  console.log(data);
+  $('.games-popup').show();
+  setTimeout(function() {
+       $('.games-popup').fadeOut();
+        }, 2000);
+  let totalGames = data.games.length;
+  $('#games-played').text(totalGames);
 };
 
 const failure = (error) => {
@@ -23,6 +22,5 @@ const failure = (error) => {
 module.exports = {
   createGameSuccess,
   getGameSuccess,
-  updateGameSuccess,
   failure,
 };

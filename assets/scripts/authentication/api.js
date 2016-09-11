@@ -3,8 +3,6 @@
 const app = require ('../app');
 
 const signUp = (data) => {
-  console.log (data);
-
   return $.ajax ({
       url: app.host + '/sign-up',
       method: 'POST',
@@ -13,8 +11,6 @@ const signUp = (data) => {
 };
 
 const signIn = (data) => {
-  console.log (data);
-
   return $.ajax ({
       url: app.host + '/sign-in',
       method: 'POST',
@@ -32,6 +28,17 @@ const signOut = () => {
   });
 };
 
+const changePassword = (data) => {
+  return $.ajax({
+      url: app.host + '/change-password/' + app.user.id,
+      method: 'PATCH',
+      headers: {
+        authorization: 'Token token=' + app.user.token,
+      },
+      data: data,
+  });
+};
+
 const createGame = function() {
   return $.ajax({
     url: 'http://tic-tac-toe.wdibos.com/games',
@@ -42,9 +49,9 @@ const createGame = function() {
   });
 };
 
-const getGame = function(data) {
+const getGame = function() {
   return $.ajax({
-    url: 'http://tic-tac-toe.wdibos.com/games/' + data.games.id,
+    url: 'http://tic-tac-toe.wdibos.com/games/',
     headers: {
       Authorization: 'Token token=' + app.user.token,
     },
@@ -70,6 +77,25 @@ const updateGame = function (index, value) {
     });
   };
 
+  const updateGameEnd = function (index, value) {
+    return $.ajax({
+        method: 'PATCH',
+        url: 'http://tic-tac-toe.wdibos.com/games/' + app.game.id,
+        headers: {
+        Authorization: 'Token token=' + app.user.token,
+        },
+        data: {
+             "game": {
+                "over": true,
+                "cell": {
+                 "index": index,
+                 "value": value,
+                        },
+                      }
+        }
+      });
+    };
+
 
 module.exports = {
   signUp,
@@ -78,4 +104,6 @@ module.exports = {
   createGame,
   getGame,
   updateGame,
+  updateGameEnd,
+  changePassword,
 };
