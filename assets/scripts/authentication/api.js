@@ -41,7 +41,7 @@ const changePassword = (data) => {
 
 const createGame = function() {
   return $.ajax({
-    url: 'http://tic-tac-toe.wdibos.com/games',
+    url: app.host + '/games',
     headers: {
       Authorization: 'Token token=' + app.user.token,
     },
@@ -51,7 +51,7 @@ const createGame = function() {
 
 const getGame = function() {
   return $.ajax({
-    url: 'http://tic-tac-toe.wdibos.com/games/',
+    url: app.host + '/games',
     headers: {
       Authorization: 'Token token=' + app.user.token,
     },
@@ -62,7 +62,7 @@ const getGame = function() {
 const updateGame = function (index, value) {
   return $.ajax({
       method: 'PATCH',
-      url: 'http://tic-tac-toe.wdibos.com/games/' + app.game.id,
+      url: app.host + '/games/' + app.game.id,
       headers: {
       Authorization: 'Token token=' + app.user.token,
       },
@@ -80,7 +80,7 @@ const updateGame = function (index, value) {
   const updateGameEnd = function (index, value) {
     return $.ajax({
         method: 'PATCH',
-        url: 'http://tic-tac-toe.wdibos.com/games/' + app.game.id,
+        url: app.host + '/games/' + app.game.id,
         headers: {
         Authorization: 'Token token=' + app.user.token,
         },
