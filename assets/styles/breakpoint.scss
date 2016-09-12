@@ -1,9 +1,8 @@
 $breakpoints: (
-  'tiny':   (max-width:  767px),
-  'small':  (min-width:  768px),
+  'tiny':   (max-width:  797px),
+  'small':  (min-width:  798px),
   'medium': (min-width:  992px),
-  'large':  (min-width: 1200px),
-  'custom': (min-height:  40em)
+  'large':  (min-width:  1200px),
 );
 //Mixin
 @mixin breakpoint($name) {
